@@ -19,7 +19,9 @@ function App() {
   return (
     <div>
       <NavBar />
-      <div className="cardsCollection">{console.log(covidData)}</div>
+      <div className="cardsCollection">{covidData.Countries.map(item => (
+        <OutlinedCard />
+      ))}</div>
     </div>
   );
 }
