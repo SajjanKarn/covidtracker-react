@@ -1,0 +1,6 @@
+.cardding {
+    transition: 0.7s !important;
+} 
+.cardding:hover {
+    transform: scale(1.05);
+}

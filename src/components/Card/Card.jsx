@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
+import "./Card.css";
 
 const useStyles = makeStyles({
   root: {
@@ -21,36 +22,46 @@ const useStyles = makeStyles({
   },
 });
 
-export default function OutlinedCard() {
+export default function OutlinedCard(props) {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root} variant="outlined" style={{maxWidth: "400px"}}>
+    <Card
+      className={`${classes.root} cardding`}
+      variant="outlined"
+      style={{ maxWidth: "400px", margin: "auto"}}
+    >
       <CardContent>
         <Typography
           className={classes.title}
           color="textSecondary"
           gutterBottom
         >
-          CountryCode
+          {props.CountryCode}
         </Typography>
-        <Typography variant="h5" component="h2" style={{padding: "10px 0"}} >
-          CountryName
+        <Typography variant="h5" component="h2" style={{ padding: "10px 0" }}>
+          {props.Country}
         </Typography>
 
         <Typography variant="body2" component="p">
-        NewConfirmed: 18
-        <br />
-        TotalConfirmed: 299
-        <br />
-        NewDeaths: 1
-        <br />
-        TotalDeaths: 7
-        <br />
-        NewRecovered: 0
-        <br />
-        TotalRecovered: 10
-        <br />
+          CountryCode: {props.CountryCode}
+          <br />
+          Slug: {props.Slug}
+          <br />
+          NewConfirmed: {props.NewConfirmed}
+          <br />
+          TotalConfirmed: {props.TotalConfirmed}
+          <br />
+          NewDeaths: {props.NewDeaths}
+          <br />
+          TotalDeaths: {props.TotalDeaths}
+          <br />
+          NewRecovered: {props.NewRecovered}
+          <br />
+          TotalRecovered: {props.TotalRecovered}
+          <br />
+          Date: {props.Date}
+          <br />
         </Typography>
       </CardContent>
     </Card>
